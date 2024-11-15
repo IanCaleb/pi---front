@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/receitas.css" />
+  </head>
+  <body>
+    <header>
+      <h1>logo</h1>
+
+      <ul>
+        <li>opa</li>
+        <li>opa</li>
+      </ul>
+    </header>
+
+    <div class="inputs">
+      <form action="">
+        <h1>Receitas</h1>
+        <input type="text" placeholder="Nome da Receita" />
+        <input type="text" placeholder="valor" />
+        <input type="text" placeholder="Descrição" />
+        <input type="date" name="" id="" class="data" />
+
+        <select name="" id="">
+          <option value="outros">-- --</option>
+          <option value="salario">Sálario</option>
+          <option value="salario">Dividendos</option>
+          <option value="outros">outros</option>
+        </select>
+      </form>
+
+      <img
+        src="css/imagens/reduzir-custos-768x647.webp"
+        alt=""
+        class="imagemLateral"
+      />
+    </div>
+
+    <div class="output">
+      <div class="conteudo">
+        <br />
+        <h1>Suas receitas:</h1>
+
+        <div
+          style="width: 800px; height: 800px"
+          id="graficoReceitas"
+          class="graficoReceitas"
+        >
+          <canvas id="grafico2" class="ografico"></canvas>
+        </div>
+
+        <div class="quadro">
+          <h1>Salario</h1>
+          <h1>Provenios Itau</h1>
+          <h1>Renda Extra</h1>
+          <h1>Provenios Petrobras</h1>
+        </div>
+      </div>
+
+      <script>
+        const ctx2 = document.getElementById("grafico2").getContext("2d");
+        let valorReceita = [6, 5, 4, 3, 2, 1];
+        let tipoReceita = [
+          "Aluguel",
+          "Alimentação",
+          "Educação",
+          "Transporte",
+          "compras online",
+          "outros",
+        ];
+
+        new Chart(ctx2, {
+          type: "doughnut",
+          data: {
+            labels: tipoReceita,
+            datasets: [
+              {
+                label: "Saldo",
+                data: valorReceita,
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "right",
+                labels: {
+                  padding: 45,
+                  font: {
+                    size: 24,
+                  },
+                },
+              },
+              title: {
+                display: false,
+              },
+            },
+            layout: {
+              padding: {
+                right: 100,
+              },
+            },
+          },
+        });
+      </script>
+    </div>
+  </body>
+</html>
