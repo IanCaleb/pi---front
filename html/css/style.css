@@ -122,8 +122,8 @@ input:focus {
 }
 
 .botao-principal {
-  width: 40%;
-  height: 10%;
+  width: 100px;
+  height: 30px;
 
   background: #47aad8;
   color: #fff;
@@ -132,7 +132,7 @@ input:focus {
 
   border-color: #00000070;
 
-  margin-left: -40%;
+  margin-left: -280px;
 
   border-width: 1px;
 
