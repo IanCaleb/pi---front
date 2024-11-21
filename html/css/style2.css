@@ -8,7 +8,7 @@ body {
   align-items: center;
   flex-direction: column;
 
-  background: rgb(87, 0, 228);
+  background: rgb(245, 245, 245);
 }
 
 /*
@@ -197,7 +197,7 @@ main h1 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100vw;
   height: 150px;
 
@@ -206,14 +206,16 @@ main h1 {
 
 .opcoes div {
   background: rgb(251, 249, 255);
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   color: #000000;
   border-radius: 10px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-size: 6px;
 }
 
 .opcoes div:hover {

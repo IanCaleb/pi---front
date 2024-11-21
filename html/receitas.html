@@ -20,17 +20,27 @@
     <div class="inputs">
       <form action="">
         <h1>Receitas</h1>
-        <input type="text" placeholder="Nome da Receita" />
-        <input type="text" placeholder="valor" />
-        <input type="text" placeholder="Descrição" />
-        <input type="date" name="" id="" class="data" />
+        <label for="nomeReceita">Nome</label>
+        <input type="text" placeholder="Nome da Receita" id="nomeReceita" />
 
-        <select name="" id="">
+        <label for="descricaoReceita">Descrição</label>
+        <input type="text" placeholder="Descrição" id="descricaoReceita" />
+
+        <label for="valorReceita">Valor</label>
+        <input type="text" placeholder="valor" id="valorReceita" />
+
+        <label for="dataReceita">Data</label>
+        <input type="date" name="" id="dataReceita" class="data" />
+
+        <label for="tipoReceita">Categoria</label>
+        <select name="" id="tipoReceita">
           <option value="outros">-- --</option>
           <option value="salario">Sálario</option>
           <option value="salario">Dividendos</option>
           <option value="outros">outros</option>
         </select>
+
+        <button>Adicionar</button>
       </form>
 
       <img
