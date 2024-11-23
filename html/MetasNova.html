@@ -68,5 +68,34 @@
         <button type="submit">Salvar</button>
       </div>
     </form>
+
+    <div>
+      <h1>Todas metas</h1>
+      <ul class="listaMetas"></ul>
+
+      <script>
+        const lista = document.querySelector(".listaMetas");
+
+        async function fethMetas() {
+          try {
+            const resposta = await fetch("/metas");
+
+            const metas = resposta.json();
+
+            lista.innerHTML = "";
+
+            receitas.forEach((metas) => {
+              const li = document.createElement("li");
+              li.textContent =
+                metas.descricao + " - " + metas.valor + " - " + metas.data;
+              lista.appendChild(li);
+            });
+          } catch (error) {
+            lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
+          }
+        }
+        fethMetas();
+      </script>
+    </div>
   </body>
 </html>
