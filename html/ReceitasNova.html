@@ -3,7 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Receitas</title>
+    <link
+      rel="shortcut icon"
+      href="css/imagens/dollar.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/ReceitasNova.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div>
+        <a href="homePagenova.html">
+          <p>voltar</p>
+        </a>
+        <h1>Receitas</h1>
+      </div>
+
+      <ul>
+        <li>
+          <a href="#">Perfil</a>
+        </li>
+      </ul>
+    </header>
+
+    <form action="">
+      <h1>Receitas</h1>
+      <label for="nomeReceita">Nome</label>
+      <input type="text" placeholder="Nome da Receita" id="nomeReceita" />
+
+      <label for="descricaoReceita">Descrição</label>
+      <input type="text" placeholder="Descrição" id="descricaoReceita" />
+
+      <label for="valorReceita">Valor</label>
+      <input type="text" placeholder="valor" id="valorReceita" />
+
+      <label for="dataReceita">Data</label>
+      <input type="date" name="" id="dataReceita" class="data" />
+
+      <label for="tipoReceita">Categoria</label>
+      <select name="" id="tipoReceita">
+        <option value="outros">-- --</option>
+        <option value="salario">Sálario</option>
+        <option value="salario">Dividendos</option>
+        <option value="outros">outros</option>
+      </select>
+    </form>
+  </body>
 </html>

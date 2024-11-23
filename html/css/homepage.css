@@ -68,7 +68,12 @@ main {
   border-width: 1px;
 }
 
-.SaldoEmCaixa h1 {
+.SaldoEmCaixa .cabecalho {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
   padding: 0px 5px;
 }
 
@@ -100,7 +105,7 @@ main {
 
   border-radius: 0px 0px 5px 5px;
 
-  background-color: #cecece;
+  background-color: #ebebeb;
 }
 
 .resultadoDoMes {
@@ -114,6 +119,15 @@ main {
   border-color: #47aad8;
   border-style: solid;
   border-width: 1px;
+}
+
+.resultadoDoMes .cabecalho {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
 }
 
 .grafico {
@@ -134,13 +148,33 @@ main {
   border-width: 1px;
 }
 
-.ultimasReceitas .h1 {
+.ultimasReceitas .cabecalho {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
   padding: 0px 5px;
+}
+
+.ultimasReceitas .cabecalho a {
+  text-decoration: none;
+}
+
+.ultimasReceitas .cabecalho p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 10px;
+  background: #47aad8;
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+
+  font-size: 24px;
+
+  color: #ffffff;
 }
 
 .ultimasReceitas .receitas {
@@ -166,7 +200,7 @@ main {
   border-width: 1px;
 }
 
-.ultimasDespesas h1 {
+.ultimasDespesas .cabecalho {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -175,6 +209,25 @@ main {
   padding: 0px 5px;
 }
 
+.ultimasDespesas .cabecalho a {
+  text-decoration: none;
+}
+
+.ultimasDespesas .cabecalho p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 10px;
+  background: #47aad8;
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+
+  font-size: 24px;
+
+  color: #ffffff;
+}
 .ultimasDespesas .despesas {
   display: flex;
   flex-direction: row;
@@ -198,13 +251,33 @@ main {
   border-width: 1px;
 }
 
-.ultimosInvestimentos h1 {
+.ultimosInvestimentos .cabecalho {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
   padding: 0px 5px;
+}
+
+.ultimosInvestimentos .cabecalho a {
+  text-decoration: none;
+}
+
+.ultimosInvestimentos .cabecalho p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 10px;
+  background: #47aad8;
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+
+  font-size: 24px;
+
+  color: #ffffff;
 }
 
 .ultimosInvestimentos .investimentos {
@@ -230,13 +303,33 @@ main {
   border-width: 1px;
 }
 
-.ultimasMetas h1 {
+.ultimasMetas .cabecalho {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
   padding: 0px 5px;
+}
+
+.ultimasMetas .cabecalho a {
+  text-decoration: none;
+}
+
+.ultimasMetas .cabecalho p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 10px;
+  background: #47aad8;
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+
+  font-size: 24px;
+
+  color: #ffffff;
 }
 
 .ultimasMetas .metas {
