@@ -53,7 +53,7 @@
         <select name="" id="categoriaReceita">
           <option value="outros">-- --</option>
           <option value="salario">Sálario</option>
-          <option value="salario">Dividendos</option>
+          <option value="dividendos">Dividendos</option>
           <option value="outros">outros</option>
         </select>
       </div>
@@ -67,5 +67,39 @@
         <button type="submit">Salvar</button>
       </div>
     </form>
+
+    <div>
+      <h1>Todas receitas</h1>
+      <ul class="listaReceitas"></ul>
+
+      <script>
+        const lista = document.querySelector(".listaReceitas");
+
+        async function fethReceitas() {
+          try {
+            const resposta = await fetch("/receitas");
+
+            const receitas = resposta.json();
+
+            lista.innerHTML = "";
+
+            receitas.forEach((receita) => {
+              const li = document.createElement("li");
+              li.textContent =
+                receita.descricao +
+                " - " +
+                receita.valor +
+                " - " +
+                receita.data;
+              lista.appendChild(li);
+            });
+          } catch (error) {
+            lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
+          }
+        }
+
+        fethReceitas();
+      </script>
+    </div>
   </body>
 </html>
