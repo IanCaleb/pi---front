@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conta Certa</title>
+    <link
+      rel="shortcut icon"
+      href="css/imagens/dollar.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/homepage.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Visão geral</h1>
+
+      <ul>
+        <li><a href="#">Perfil</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <div class="primeiraLinha">
+        <div class="SaldoEmCaixa">
+          <h1>Saldo em caixa</h1>
+
+          <div class="ValorInvestido">
+            <p>Valor Investido</p>
+
+            <p>10,00</p>
+          </div>
+
+          <div class="ContaCorrente">
+            <p>Conta corrente</p>
+
+            <p>20,00</p>
+          </div>
+
+          <div class="ValorTotal">
+            <p>Valor Total</p>
+
+            <p>30,00</p>
+          </div>
+        </div>
+
+        <div class="resultadoDoMes">
+          <h1>Resultado do mês</h1>
+
+          <div class="grafico">
+            <div
+              style="width: 100%; height: 800px"
+              id="graficoPatrimonio"
+              class="graficoPatrimonio"
+            >
+              <canvas
+                id="canvaGraficoPatrimonio"
+                class="canvaGraficoPatrimonio"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="segundaLinha">
+        <div class="ultimasReceitas">
+          <h1>Ultimas receitas</h1>
+
+          <div class="receitas">
+            <p>Salario</p>
+            <p>2,00</p>
+          </div>
+
+          <div class="receitas">
+            <p>Rendimentos Itau</p>
+            <p>2,00</p>
+          </div>
+
+          <div class="receitas">
+            <p>Rendimento Petrobras</p>
+            <p>2,00</p>
+          </div>
+
+          <div class="receitas">
+            <p>Rendimento Taurus</p>
+            <p>2,00</p>
+          </div>
+
+          <div class="receitas">
+            <p>Renda Extra</p>
+            <p>2,00</p>
+          </div>
+        </div>
+
+        <div class="ultimosInvestimentos">
+          <h1>Ultimos investimentos</h1>
+
+          <div class="investimentos">
+            <p>Microsoft</p>
+
+            <p>2,00</p>
+          </div>
+
+          <div class="investimentos">
+            <p>Itau</p>
+
+            <p>2,00</p>
+          </div>
+
+          <div class="investimentos">
+            <p>Banco do Brasil</p>
+
+            <p>2,00</p>
+          </div>
+
+          <div class="investimentos">
+            <p>Petrobras</p>
+
+            <p>2,00</p>
+          </div>
+
+          <div class="investimentos">
+            <p>Vale do rio doce</p>
+
+            <p>2,00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="terceiraLinha">
+        <div class="ultimasDespesas">
+          <h1>Ultimas Despesas</h1>
+
+          <div class="despesas">
+            <p>Aluguel</p>
+            <p>2,00</p>
+          </div>
+
+          <div class="despesas">
+            <p>Mac e coquinha</p>
+            <p>2,00</p>
+          </div>
+
+          <div class="despesas">
+            <p>Galão de água</p>
+            <p>2,00</p>
+          </div>
+
+          <div class="despesas">
+            <p>Feira</p>
+            <p>2,00</p>
+          </div>
+
+          <div class="despesas">
+            <p>Uber</p>
+            <p>2,00</p>
+          </div>
+        </div>
+
+        <div class="ultimasMetas">
+          <h1>Ultimas metas</h1>
+
+          <div class="metas">
+            <p>Viagem Maceio</p>
+            <p>1,00</p>
+          </div>
+
+          <div class="metas">
+            <p>Casa</p>
+            <p>1,00</p>
+          </div>
+
+          <div class="metas">
+            <p>Carro</p>
+            <p>1,00</p>
+          </div>
+
+          <div class="metas">
+            <p>geladeira</p>
+            <p>1,00</p>
+          </div>
+
+          <div class="metas">
+            <p>Viagem Chile</p>
+            <p>1,00</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <ul>
+        <li>
+          <a href="#">sobre nós</a>
+        </li>
+
+        <li>
+          <a href="#">sobre nós</a>
+        </li>
+
+        <li>
+          <a href="#">sobre nós</a>
+        </li>
+
+        <li>
+          <a href="#">sobre nós</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const ctx1 = document
+    .getElementById("canvaGraficoPatrimonio")
+    .getContext("2d");
+  let valores = [6, 5, 4, 3, 2, 3];
+  let categorias = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "junho"];
+
+  new Chart(ctx1, {
+    type: "bar",
+    data: {
+      labels: categorias,
+      datasets: [
+        {
+          label: "valores",
+          data: valores,
+          backgroundColor: "rgba(87, 0, 228, 0.5)",
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+        },
+        title: {
+          display: true,
+        },
+      },
+      layout: {
+        padding: {
+          right: 100,
+        },
+      },
+    },
+  });
+</script>

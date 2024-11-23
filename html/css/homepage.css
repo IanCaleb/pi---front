@@ -1,0 +1,265 @@
+body {
+  margin: 0px;
+
+  background-color: rgb(240, 240, 240);
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #4ac4fd;
+
+  padding: 20px;
+
+  color: #fff;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  color: #fff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 8%;
+
+  background-color: rgb(240, 240, 240);
+}
+
+.primeiraLinha {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.segundaLinha {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.terceiraLinha {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.SaldoEmCaixa {
+  background: #ffffff;
+  border-radius: 5px;
+
+  width: 40%;
+  height: 232px;
+
+  border-color: #47aad8;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.SaldoEmCaixa h1 {
+  padding: 0px 5px;
+}
+
+.SaldoEmCaixa .ValorInvestido {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+.SaldoEmCaixa .ContaCorrente {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+.SaldoEmCaixa .ValorTotal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+
+  border-radius: 0px 0px 5px 5px;
+
+  background-color: #cecece;
+}
+
+.resultadoDoMes {
+  background: #ffffff;
+  border-radius: 5px;
+  width: 55%;
+  height: 400px;
+
+  padding: 5px;
+
+  border-color: #47aad8;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.grafico {
+  margin-left: 60px;
+}
+
+.ultimasReceitas {
+  background: #ffffff;
+  border-radius: 5px;
+
+  width: 40%;
+  height: 333px;
+
+  margin-top: -150px;
+
+  border-color: #47aad8;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.ultimasReceitas .h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+.ultimasReceitas .receitas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+.ultimasDespesas {
+  background: #ffffff;
+  border-radius: 5px;
+
+  width: 40%;
+  height: 333px;
+
+  margin-top: -160px;
+
+  border-color: #35bfff;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.ultimasDespesas h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+.ultimasDespesas .despesas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+.ultimosInvestimentos {
+  background: #ffffff;
+  border-radius: 5px;
+
+  width: 56%;
+  height: 333px;
+
+  margin-top: 20px;
+
+  border-color: #47aad8;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.ultimosInvestimentos h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+.ultimosInvestimentos .investimentos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+.ultimasMetas {
+  background: #ffffff;
+  border-radius: 5px;
+
+  width: 56%;
+  height: 333px;
+
+  margin-top: 20px;
+
+  border-color: #47aad8;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.ultimasMetas h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+.ultimasMetas .metas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 5px;
+}
+
+footer {
+  background: #4ac4fd;
+  height: 200px;
+
+  padding: 20px 0px;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer li a {
+  text-decoration: none;
+  color: #fff;
+}
