@@ -28,29 +28,44 @@
       </ul>
     </header>
 
-    <form action="">
-      <div></div>
-      <label for="nomeReceita">Nome</label>
-      <input type="text" placeholder="Nome da Receita" id="nomeReceita" />
+    <form action="" method="post">
+      <div>
+        <label for="nomeReceita">Nome</label><br />
+        <input type="text" placeholder="Nome da Receita" id="nomeReceita" />
+      </div>
 
-      <label for="descricaoReceita">Descrição</label>
-      <input type="text" placeholder="Descrição" id="descricaoReceita" />
+      <div>
+        <label for="valorReceita">Valor</label><br />
+        <input type="text" placeholder="valor" id="valorReceita" />
+      </div>
 
-      <label for="valorReceita">Valor</label>
-      <input type="text" placeholder="valor" id="valorReceita" />
+      <div>
+        <label for="descricaoReceita">Descrição</label><br />
+        <textarea
+          name=""
+          id="descricaoReceita"
+          placeholder="Insira uma descrição"
+        ></textarea>
+      </div>
 
-      <label for="dataReceita">Data</label>
-      <input type="date" name="" id="dataReceita" class="data" />
+      <div>
+        <label for="categoriaReceita">Categoria</label><br />
+        <select name="" id="categoriaReceita">
+          <option value="outros">-- --</option>
+          <option value="salario">Sálario</option>
+          <option value="salario">Dividendos</option>
+          <option value="outros">outros</option>
+        </select>
+      </div>
 
-      <label for="tipoReceita">Categoria</label>
-      <select name="" id="tipoReceita">
-        <option value="outros">-- --</option>
-        <option value="salario">Sálario</option>
-        <option value="salario">Dividendos</option>
-        <option value="outros">outros</option>
-      </select>
+      <div>
+        <label for="dataReceita">Data</label><br />
+        <input type="date" name="" id="dataReceita" class="data" />
+      </div>
 
-      <button>Salvar</button>
+      <div class="button">
+        <button type="submit">Salvar</button>
+      </div>
     </form>
   </body>
 </html>
