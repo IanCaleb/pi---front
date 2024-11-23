@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <p>Voltar</p>
+      <h1>Investimentos</h1>
+    </header>
+
+    <form action="" method="post">
+      <div>
+        <label for="nomeInvestimento">Nome</label><br />
+        <input
+          type="text"
+          id="nomeInvestimento"
+          placeholder="Nome do investimento"
+        />
+      </div>
+
+      <div>
+        <label for="valorInvestimento">Valor</label><br />
+        <input type="text" id="valorInvestimento" placeholder="Insira valor" />
+      </div>
+
+      <div>
+        <label for="descricaoInvestimento">Descrição</label><br />
+        <textarea
+          name=""
+          id="descricaoInvestimento"
+          placeholder="Descrição"
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="categoriaInvestimento">Categoria</label><br />
+        <select name="" id="categoriaInvestimento">
+          <option value="outros">-- --</option>
+          <option value="fiis">Fiis</option>
+          <option value="acoes">Ações</option>
+          <option value="renda_fixa">Renda fixa</option>
+          <option value="outros">outros</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="dataInvestimento">Data</label><br />
+        <input type="date" name="" id="dataInvestimento" />
+      </div>
+
+      <div class="button">
+        <button type="submit">Salvar</button>
+      </div>
+    </form>
+  </body>
+</html>

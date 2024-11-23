@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <p>Voltar</p>
+      <h1>Despesas</h1>
+    </header>
+  </body>
+
+  <form action="" method="post">
+    <div>
+      <label for="nomeDespesa">Nome</label><br />
+      <input type="text" id="nomeDespesa" placeholder="nome da despesa" />
+    </div>
+
+    <div>
+      <label for="valorDespesa">Valor</label><br />
+      <input type="text" id="valorDespesa" placeholder="Insira valor" />
+    </div>
+
+    <div>
+      <label for="descricaoDespesa">Descrição</label><br />
+      <textarea
+        name=""
+        id="descricaoDespesa"
+        placeholder="Insira uma descrição"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="categoriaDespesa">Categoria</label><br />
+      <select name="" id="categoriaDespesa">
+        <option value="outros">-- --</option>
+        <option value="aluguel">Aluguel</option>
+        <option value="alimentacao">Alimentação</option>
+        <option value="deslocamento">Deslocamento</option>
+        <option value="educacao">Educação</option>
+        <option value="entretenimento">Entretenimento</option>
+        <option value="outros">outros</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="dataDespesa">Dara</label><br />
+      <input type="date" name="" id="dataDespesa" />
+    </div>
+
+    <div class="button">
+      <button type="submit">Salvar</button>
+    </div>
+  </form>
+</html>
