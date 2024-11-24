@@ -27,79 +27,80 @@
         </li>
       </ul>
     </header>
+    <main>
+      <form action="" method="post">
+        <div>
+          <label for="nomeReceita">Nome</label><br />
+          <input type="text" placeholder="Nome da Receita" id="nomeReceita" />
+        </div>
 
-    <form action="" method="post">
+        <div>
+          <label for="valorReceita">Valor</label><br />
+          <input type="text" placeholder="valor" id="valorReceita" />
+        </div>
+
+        <div>
+          <label for="descricaoReceita">Descrição</label><br />
+          <textarea
+            name=""
+            id="descricaoReceita"
+            placeholder="Insira uma descrição"
+          ></textarea>
+        </div>
+
+        <div>
+          <label for="categoriaReceita">Categoria</label><br />
+          <select name="" id="categoriaReceita">
+            <option value="outros">-- --</option>
+            <option value="salario">Sálario</option>
+            <option value="dividendos">Dividendos</option>
+            <option value="outros">outros</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="dataReceita">Data</label><br />
+          <input type="date" name="" id="dataReceita" class="data" />
+        </div>
+
+        <div class="button">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+
       <div>
-        <label for="nomeReceita">Nome</label><br />
-        <input type="text" placeholder="Nome da Receita" id="nomeReceita" />
-      </div>
+        <h1>Histórico receitas</h1>
+        <ul class="listaReceitas"></ul>
 
-      <div>
-        <label for="valorReceita">Valor</label><br />
-        <input type="text" placeholder="valor" id="valorReceita" />
-      </div>
+        <script>
+          const lista = document.querySelector(".listaReceitas");
 
-      <div>
-        <label for="descricaoReceita">Descrição</label><br />
-        <textarea
-          name=""
-          id="descricaoReceita"
-          placeholder="Insira uma descrição"
-        ></textarea>
-      </div>
+          async function fethReceitas() {
+            try {
+              const resposta = await fetch("/receitas");
 
-      <div>
-        <label for="categoriaReceita">Categoria</label><br />
-        <select name="" id="categoriaReceita">
-          <option value="outros">-- --</option>
-          <option value="salario">Sálario</option>
-          <option value="dividendos">Dividendos</option>
-          <option value="outros">outros</option>
-        </select>
-      </div>
+              const receitas = resposta.json();
 
-      <div>
-        <label for="dataReceita">Data</label><br />
-        <input type="date" name="" id="dataReceita" class="data" />
-      </div>
+              lista.innerHTML = "";
 
-      <div class="button">
-        <button type="submit">Salvar</button>
-      </div>
-    </form>
-
-    <div>
-      <h1>Histórico receitas</h1>
-      <ul class="listaReceitas"></ul>
-
-      <script>
-        const lista = document.querySelector(".listaReceitas");
-
-        async function fethReceitas() {
-          try {
-            const resposta = await fetch("/receitas");
-
-            const receitas = resposta.json();
-
-            lista.innerHTML = "";
-
-            receitas.forEach((receita) => {
-              const li = document.createElement("li");
-              li.textContent =
-                receita.descricao +
-                " - " +
-                receita.valor +
-                " - " +
-                receita.data;
-              lista.appendChild(li);
-            });
-          } catch (error) {
-            lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
+              receitas.forEach((receita) => {
+                const li = document.createElement("li");
+                li.textContent =
+                  receita.descricao +
+                  " - " +
+                  receita.valor +
+                  " - " +
+                  receita.data;
+                lista.appendChild(li);
+              });
+            } catch (error) {
+              lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
+            }
           }
-        }
 
-        fethReceitas();
-      </script>
-    </div>
+          fethReceitas();
+        </script>
+      </div>
+    </main>
   </body>
 </html>
