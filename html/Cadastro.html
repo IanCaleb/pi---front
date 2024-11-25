@@ -1,58 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <main>
-      <div class="lateral">
-        <h1 class="logo">Conta Certa</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
 
-        <div class="nomes">
-          <h1>SEJA BEM<br />VINDO!</h1>
-          <p>Rendimento e segurança <br />com Conta certa</p>
-        </div>
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
 
-        <button class="botao-lateral">Saiba mais</button>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 40px 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  form h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #55D976;
+  }
+
+  .input-box {
+    margin-bottom: 20px;
+  }
+
+  .input-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .input-box input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+  }
+
+  .input-box input:focus {
+    outline: none;
+  }
+
+  .register-btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px;
+    color: #FFFFFF;
+    background-color: #55D976;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .register-btn:hover {
+    scale: 0.98;
+  }
+
+  .link {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <form action="/users" method="POST">
+      <h3>Criar Conta</h3>
+      <div class="input-box">
+        <label>Nome</label>
+        <input type="text" name="nome" required placeholder="Digite Seu nome" />
       </div>
 
-      <div class="principal">
-        <div class="titulos">
-          <h1>Conta Certa</h1>
-        </div>
-        <br /><br />
-
-        <form action="index.html">
-          <br /><br />
-          <p>Nome</p>
-          <input type="text" id="Nome" required placeholder="Digite Seu nome" />
-          <br />
-
-          <p>Email</p>
-          <input
-            type="text"
-            id="Email"
-            required
-            placeholder="Digite Seu E-mail"
-          />
-          <br />
-
-          <p>Senha</p>
-          <input type="text" id="Senha" required placeholder="Crie sua senha" />
-
-          <button class="botao-principal" style="margin-top: -10px">
-            Cadastrar
-          </button>
-
-          <br />
-
-          <a href="index.html" style="margin-left: -340px">Entrar</a>
-        </form>
+      <div class="input-box">
+        <label>Email</label>
+        <input type="text" name="email" required placeholder="Digite Seu E-mail" />
       </div>
-    </main>
-  </body>
+      <div class="input-box">
+        <label>Senha</label>
+        <input type="text" name="senha" required placeholder="Crie sua senha" />
+      </div>
+
+      <button class="register-btn">
+        Cadastrar
+      </button>
+
+      <a href="index.html" class="link">Fazer login</a>
+    </form>
+  </div class="container">
+</body>
+
 </html>

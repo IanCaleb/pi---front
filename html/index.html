@@ -7,52 +7,112 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <title>Document</title>
-
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Login - Conta Certa</title>
+  <link rel="stylesheet" href="../style/style.css" />
 </head>
 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 40px 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  form h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #55D976;
+  }
+
+  .input-box {
+    margin-bottom: 20px;
+  }
+
+  .input-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .input-box input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+  }
+
+  .input-box input:focus {
+    outline: none;
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    color: #FFFFFF;
+    background-color: #55D976;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .login-btn:hover {
+    scale: 0.98;
+  }
+
+  .link {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+</style>
+
 <body>
-  <main>
-    <div class="lateral">
-      <h1 class="logo">Conta certa</h1>
-
-      <div class="nomes">
-        <h1>SEJA BEM<br />VINDO!</h1>
-        <p>Rendimento e segurança <br />com Conta certa</p>
+  <div class="container">
+    <form id="login-form" action="/users/login" method="POST">
+      <h3>Fazer Login</h3>
+      <div class="input-box">
+        <label for="email">Email</label>
+        <input type="email" name="email" required placeholder="Digite seu e-mail">
       </div>
-
-      <button class="botao-lateral">Saiba mais</button>
-    </div>
-
-    <div class="principal">
-      <div class="titulos">
-        <h1>Conta certa</h1>
+      <div class="input-box">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" required placeholder="Digite sua senha">
       </div>
-      <br /><br />
-
-      <form id="login-form" action="HomePage.html">
-        <p>Email</p>
-        <input type="text" required id="Email" placeholder="Digite Seu E-mail" />
-        <br />
-
-        <p>Senha</p>
-        <input type="text" required id="Senha" placeholder="Digite sua senha" />
-        <button class="botao-principal">Entrar</button>
-
-        <br />
-        <a href="Cadastro.html" style="margin-left: -300px">Criar conta</a>
-      </form>
-    </div>
-  </main>
+      <button type="submit" class="login-btn">Entrar</button>
+      <a href="Cadastro.html" class="link">Criar conta</a>
+    </form>
+  </div>
 </body>
 
 </html>
-
-<script>
-  const form = document.getElementById('login-form');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-  });
-</script>
