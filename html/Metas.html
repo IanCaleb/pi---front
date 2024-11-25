@@ -27,7 +27,7 @@
       </ul>
     </header>
 
-    <form action="">
+    <form action="/metas">
       <div>
         <label for="nomeMeta">Nome</label><br />
         <input type="text" id="nomeMeta" placeholder="Nome da meta" />
@@ -72,30 +72,30 @@
     <div class="historico">
       <h1>Todas metas</h1>
       <ul class="listaMetas"></ul>
-
-      <script>
-        const lista = document.querySelector(".listaMetas");
-
-        async function fethMetas() {
-          try {
-            const resposta = await fetch("/metas");
-
-            const metas = resposta.json();
-
-            lista.innerHTML = "";
-
-            metas.forEach((metas) => {
-              const li = document.createElement("li");
-              li.textContent =
-                metas.descricao + " - " + metas.valor + " - " + metas.data;
-              lista.appendChild(li);
-            });
-          } catch (error) {
-            lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
-          }
-        }
-        fethMetas();
-      </script>
     </div>
   </body>
 </html>
+
+<script>
+  const lista = document.querySelector(".listaMetas");
+
+  async function fethMetas() {
+    try {
+      const resposta = await fetch("/metas");
+
+      const metas = resposta.json();
+
+      lista.innerHTML = "";
+
+      metas.forEach((metas) => {
+        const li = document.createElement("li");
+        li.textContent =
+          metas.descricao + " - " + metas.valor + " - " + metas.data;
+        lista.appendChild(li);
+      });
+    } catch (error) {
+      lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
+    }
+  }
+  fethMetas();
+</script>

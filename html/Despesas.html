@@ -10,7 +10,7 @@
       href="css/imagens/dollar.ico"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="css/Historico.css" />
+    <link rel="stylesheet" href="../css/DespesasNova.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
@@ -27,15 +27,15 @@
       </ul>
     </header>
 
-    <form action="" method="post">
+    <form action="/despesas" method="post">
       <div>
         <label for="nomeDespesa">Nome</label><br />
-        <input type="text" id="nomeDespesa" placeholder="nome da despesa" />
+        <input type="text" name="nome" id="nomeDespesa" placeholder="nome da despesa" />
       </div>
 
       <div>
         <label for="valorDespesa">Valor</label><br />
-        <input type="text" id="valorDespesa" placeholder="Insira valor" />
+        <input type="text" name="valor" id="valorDespesa" placeholder="Insira valor" />
       </div>
 
       <div>
@@ -62,7 +62,7 @@
 
       <div>
         <label for="dataDespesa">Data</label><br />
-        <input type="date" name="" id="dataDespesa" />
+        <input type="date" name="data" id="dataDespesa" />
       </div>
 
       <div class="button">
@@ -73,35 +73,35 @@
     <div class="historico">
       <h1>Historico de despesas</h1>
       <ul class="listaDespesas"></ul>
-
-      <script>
-        const lista = document.querySelector(".listaDespesas");
-
-        async function fethDespesas() {
-          try {
-            const resposta = await fetch("/despesas");
-
-            const despesas = resposta.json();
-
-            lista.innerHTML = "";
-
-            despesas.forEach((despesas) => {
-              const li = document.createElement("li");
-              li.textContent =
-                despesa.descricao +
-                " - " +
-                despesa.valor +
-                " - " +
-                despesa.data;
-              lista.appendChild(li);
-            });
-          } catch (error) {
-            lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
-          }
-        }
-
-        fethDespesas();
-      </script>
     </div>
   </body>
 </html>
+
+<script>
+  const lista = document.querySelector(".listaDespesas");
+
+  async function fethDespesas() {
+    try {
+      const resposta = await fetch("/despesas");
+
+      const despesas = resposta.json();
+
+      lista.innerHTML = "";
+
+      despesas.forEach((despesas) => {
+        const li = document.createElement("li");
+        li.textContent =
+          despesa.descricao +
+          " - " +
+          despesa.valor +
+          " - " +
+          despesa.data;
+        lista.appendChild(li);
+      });
+    } catch (error) {
+      lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
+    }
+  }
+
+  fethDespesas();
+</script>

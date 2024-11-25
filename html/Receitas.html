@@ -9,7 +9,7 @@
       href="css/imagens/dollar.ico"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="css/Historico.css" />
+    <link rel="stylesheet" href="../css/receitas.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
@@ -23,12 +23,12 @@
 
       <ul>
         <li>
-          <a href="#">Perfil</a>
+          <a href="/profile">Perfil</a>
         </li>
       </ul>
     </header>
     <main>
-      <form action="" method="post">
+      <form action="/receitas" method="post">
         <div>
           <label for="nomeReceita">Nome</label><br />
           <input type="text" placeholder="Nome da Receita" id="nomeReceita" />
@@ -71,36 +71,36 @@
       <div class="historico">
         <h1>Histórico receitas</h1>
         <ul class="listaReceitas"></ul>
-
-        <script>
-          const lista = document.querySelector(".listaReceitas");
-
-          async function fethReceitas() {
-            try {
-              const resposta = await fetch("/receitas");
-
-              const receitas = resposta.json();
-
-              lista.innerHTML = "";
-
-              receitas.forEach((receitas) => {
-                const li = document.createElement("li");
-                li.textContent =
-                  receita.descricao +
-                  " - " +
-                  receita.valor +
-                  " - " +
-                  receita.data;
-                lista.appendChild(li);
-              });
-            } catch (error) {
-              lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
-            }
-          }
-
-          fethReceitas();
-        </script>
       </div>
     </main>
   </body>
 </html>
+
+<script>
+  const lista = document.querySelector(".listaReceitas");
+
+  async function fethReceitas() {
+    try {
+      const resposta = await fetch("/receitas");
+
+      const receitas = resposta.json();
+
+      lista.innerHTML = "";
+
+      receitas.forEach((receitas) => {
+        const li = document.createElement("li");
+        li.textContent =
+          receita.descricao +
+          " - " +
+          receita.valor +
+          " - " +
+          receita.data;
+        lista.appendChild(li);
+      });
+    } catch (error) {
+      lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
+    }
+  }
+
+  fethReceitas();
+</script>

@@ -30,7 +30,7 @@
       </ul>
     </header>
 
-    <form action="" method="post">
+    <form action="/orcamentos" method="post">
       <div>
         <label for="nomeInvestimento">Nome</label><br />
         <input
@@ -78,35 +78,35 @@
     <div class="historico">
       <h1>Historico de Investimentos</h1>
       <ul class="listaInvestimentos"></ul>
-
-      <script>
-        const lista = document.querySelector(".listaInvestimentos");
-
-        async function fethInvestimentos() {
-          try {
-            const resposta = await fetch("/");
-
-            const investimentos = resposta.json();
-
-            lista.innerHTML = "";
-
-            investimentos.forEach((investimentos) => {
-              const li = document.createElement("li");
-              li.textContent =
-                investimentos.descricao +
-                " - " +
-                investimentos.valor +
-                " - " +
-                investimentos.data;
-              lista.appendChild(li);
-            });
-          } catch (error) {
-            lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
-          }
-        }
-
-        fethInvestimentos();
-      </script>
     </div>
   </body>
 </html>
+
+<script>
+  const lista = document.querySelector(".listaInvestimentos");
+
+  async function fethInvestimentos() {
+    try {
+      const resposta = await fetch("/");
+
+      const investimentos = resposta.json();
+
+      lista.innerHTML = "";
+
+      investimentos.forEach((investimentos) => {
+        const li = document.createElement("li");
+        li.textContent =
+          investimentos.descricao +
+          " - " +
+          investimentos.valor +
+          " - " +
+          investimentos.data;
+        lista.appendChild(li);
+      });
+    } catch (error) {
+      lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
+    }
+  }
+
+  fethInvestimentos();
+</script>
