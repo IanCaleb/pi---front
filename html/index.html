@@ -116,3 +116,30 @@
 </body>
 
 </html>
+
+<script>
+ const form = document.getElementById('login-form');
+
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/users/login', {
+        method: 'POST',
+        body: formData
+      });
+
+      const response_json = await response.json();
+
+      if (response_json.ok) {
+        window.location.href = '/homePage.html';
+      } else {
+        alert('Falha na autenticação do usuário.');
+      }
+    } catch (error) {
+      alert('Houve um erro ao autenticar usuário');
+    }
+  });
+</script>

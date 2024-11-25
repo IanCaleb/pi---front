@@ -98,7 +98,7 @@
 
 <body>
   <div class="container">
-    <form action="/users" method="POST">
+    <form id="register-form" action="/users" method="POST">
       <h3>Criar Conta</h3>
       <div class="input-box">
         <label>Nome</label>
@@ -124,3 +124,30 @@
 </body>
 
 </html>
+
+<script>
+  const form = document.getElementById('register-form');
+
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/users', {
+        method: 'POST',
+        body: formData
+      });
+
+      const response_json = await response.json();
+
+      if (response_json.ok) {
+        window.location.href = '/homePage.html';
+      } else {
+        alert('Falha na autenticação do usuário.');
+      }
+    } catch (error) {
+      alert('Houve um erro ao autenticar usuário');
+    }
+  });
+</script>
