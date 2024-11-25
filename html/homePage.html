@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conta Certa</title>
+  <link rel="shortcut icon" href="css/imagens/dollar.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/homepage.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Visão geral</h1>
+
+    <ul>
+      <li>
+        <a href="#">Perfil</a>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+    <div class="primeiraLinha">
+      <div class="SaldoEmCaixa">
+        <div class="cabecalho">
+          <h1>Saldo em caixa</h1>
+        </div>
+
+        <div class="ValorInvestido">
+          <p>Valor Investido</p>
+
+          <p>10,00</p>
+        </div>
+
+        <div class="ContaCorrente">
+          <p>Conta corrente</p>
+
+          <p>20,00</p>
+        </div>
+
+        <div class="ValorTotal">
+          <p>Valor Total</p>
+
+          <p>30,00</p>
+        </div>
+      </div>
+
+      <div class="resultadoDoMes">
+        <div class="cabecalho">
+          <h1>Resultado do mês</h1>
+        </div>
+
+        <div class="grafico">
+          <div style="width: 100%; height: 800px" id="graficoPatrimonio" class="graficoPatrimonio">
+            <canvas id="canvaGraficoPatrimonio" class="canvaGraficoPatrimonio"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="segundaLinha">
+      <div class="ultimasReceitas">
+        <div class="cabecalho">
+          <h1>Ultimas receitas</h1>
+
+          <a href="Receitas.html">
+            <p>+</p>
+          </a>
+        </div>
+
+        <div class="receitas">
+          <p id="nomeReceita1"></p>
+          <p id="valorReceita1"></p>
+
+          <script>
+            const nomeReceita1 = "Salario";
+            const valorReceita1 = "2824,00";
+
+            document.getElementById("nomeReceita1").textContent =
+              nomeReceita1;
+            document.getElementById("valorReceita1").textContent =
+              valorReceita1;
+          </script>
+        </div>
+
+        <div class="receitas">
+          <p id="nomeReceita2"></p>
+          <p id="valorReceita2"></p>
+
+          <script>
+            const nomeReceita2 = "Algo";
+            const valorReceita2 = "00,00";
+
+            document.getElementById("nomeReceita2").textContent =
+              nomeReceita2;
+            document.getElementById("valorReceita2").textContent =
+              valorReceita2;
+          </script>
+        </div>
+
+        <div class="receitas">
+          <p id="nomeReceita3"></p>
+          <p id="valorReceita3"></p>
+
+          <script>
+            const nomeReceita3 = "Algo";
+            const valorReceita3 = "00,00";
+
+            document.getElementById("nomeReceita3").textContent =
+              nomeReceita3;
+            document.getElementById("valorReceita3").textContent =
+              valorReceita3;
+          </script>
+        </div>
+
+        <div class="receitas">
+          <p id="nomeReceita4"></p>
+          <p id="valorReceita4"></p>
+
+          <script>
+            const nomeReceita4 = "Algo";
+            const valorReceita4 = "00,00";
+
+            document.getElementById("nomeReceita4").textContent =
+              nomeReceita4;
+            document.getElementById("valorReceita4").textContent =
+              valorReceita4;
+          </script>
+        </div>
+
+        <div class="receitas">
+          <p id="nomeReceita5"></p>
+          <p id="valorReceita5"></p>
+
+          <script>
+            const nomeReceita5 = "Algo";
+            const valorReceita5 = "00,00";
+
+            document.getElementById("nomeReceita5").textContent =
+              nomeReceita5;
+            document.getElementById("valorReceita5").textContent =
+              valorReceita5;
+          </script>
+        </div>
+      </div>
+
+      <div class="ultimosInvestimentos">
+        <div class="cabecalho">
+          <h1>Ultimos investimentos</h1>
+
+          <a href="InvestimentosNova.html">
+            <p>+</p>
+          </a>
+        </div>
+
+        <div class="investimentos">
+          <p id="nomeInvestimento1"></p>
+          <p id="valorInvestimento1"></p>
+
+          <script>
+            const nomeInvestimento1 = "Itau";
+            const valorInvestimento1 = "34,11";
+
+            document.getElementById("nomeInvestimento1").textContent =
+              nomeInvestimento1;
+            document.getElementById("valorInvestimento1").textContent =
+              valorInvestimento1;
+          </script>
+        </div>
+
+        <div class="investimentos">
+          <p id="nomeInvestimento2"></p>
+          <p id="valorInvestimento2"></p>
+
+          <script>
+            const nomeInvestimento2 = "algo";
+            const valorInvestimento2 = "0,00";
+
+            document.getElementById("nomeInvestimento2").textContent =
+              nomeInvestimento2;
+            document.getElementById("valorInvestimento2").textContent =
+              valorInvestimento2;
+          </script>
+        </div>
+
+        <div class="investimentos">
+          <p id="nomeInvestimento3"></p>
+          <p id="valorInvestimento3"></p>
+
+          <script>
+            const nomeInvestimento3 = "algo";
+            const valorInvestimento3 = "0,00";
+
+            document.getElementById("nomeInvestimento3").textContent =
+              nomeInvestimento3;
+            document.getElementById("valorInvestimento3").textContent =
+              valorInvestimento3;
+          </script>
+        </div>
+
+        <div class="investimentos">
+          <p id="nomeInvestimento4"></p>
+          <p id="valorInvestimento4"></p>
+
+          <script>
+            const nomeInvestimento4 = "algo";
+            const valorInvestimento4 = "0,00";
+
+            document.getElementById("nomeInvestimento4").textContent =
+              nomeInvestimento4;
+            document.getElementById("valorInvestimento4").textContent =
+              valorInvestimento4;
+          </script>
+        </div>
+
+        <div class="investimentos">
+          <p id="nomeInvestimento5"></p>
+          <p id="valorInvestimento5"></p>
+
+          <script>
+            const nomeInvestimento5 = "algo";
+            const valorInvestimento5 = "0,00";
+
+            document.getElementById("nomeInvestimento5").textContent =
+              nomeInvestimento5;
+            document.getElementById("valorInvestimento5").textContent =
+              valorInvestimento5;
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="terceiraLinha">
+      <div class="ultimasDespesas">
+        <div class="cabecalho">
+          <h1>Ultimas Despesas</h1>
+
+          <a href="DespesasNova.html">
+            <p>+</p>
+          </a>
+        </div>
+
+        <div class="despesas">
+          <p id="nomeDespesa1"></p>
+          <p id="valorDespesa1"></p>
+
+          <script>
+            const nomeDespesa1 = "Aluguel";
+            const valorDespesa1 = "800,00";
+
+            document.getElementById("nomeDespesa1").textContent =
+              nomeDespesa1;
+            document.getElementById("valorDespesa1").textContent =
+              valorDespesa1;
+          </script>
+        </div>
+
+        <div class="despesas">
+          <p id="nomeDespesa2"></p>
+          <p id="valorDespesa2"></p>
+
+          <script>
+            const nomeDespesa2 = "Algo";
+            const valorDespesa2 = "0,00";
+
+            document.getElementById("nomeDespesa2").textContent =
+              nomeDespesa2;
+            document.getElementById("valorDespesa2").textContent =
+              valorDespesa2;
+          </script>
+        </div>
+
+        <div class="despesas">
+          <p id="nomeDespesa3"></p>
+          <p id="valorDespesa3"></p>
+
+          <script>
+            const nomeDespesa3 = "Algo";
+            const valorDespesa3 = "0,00";
+
+            document.getElementById("nomeDespesa3").textContent =
+              nomeDespesa3;
+            document.getElementById("valorDespesa3").textContent =
+              valorDespesa3;
+          </script>
+        </div>
+
+        <div class="despesas">
+          <p id="nomeDespesa4"></p>
+          <p id="valorDespesa4"></p>
+
+          <script>
+            const nomeDespesa4 = "Algo";
+            const valorDespesa4 = "0,00";
+
+            document.getElementById("nomeDespesa4").textContent =
+              nomeDespesa4;
+            document.getElementById("valorDespesa4").textContent =
+              valorDespesa4;
+          </script>
+        </div>
+
+        <div class="despesas">
+          <p id="nomeDespesa5"></p>
+          <p id="valorDespesa5"></p>
+
+          <script>
+            const nomeDespesa5 = "Algo";
+            const valorDespesa5 = "0,00";
+
+            document.getElementById("nomeDespesa5").textContent =
+              nomeDespesa5;
+            document.getElementById("valorDespesa5").textContent =
+              valorDespesa5;
+          </script>
+        </div>
+      </div>
+
+      <div class="ultimasMetas">
+        <div class="cabecalho">
+          <h1>Ultimas metas</h1>
+
+          <a href="MetasNova.html">
+            <p>+</p>
+          </a>
+        </div>
+
+        <div class="metas">
+          <p id="nomeMeta1"></p>
+          <p id="valorMeta1"></p>
+
+          <script>
+            // Defina o valor da variável
+            const nomeMeta1 = "Viagem São Paulo";
+            const valorMeta1 = "3600,00";
+
+            // Atualize o conteúdo do parágrafo
+            document.getElementById("nomeMeta1").textContent = nomeMeta1;
+            document.getElementById("valorMeta1").textContent = valorMeta1;
+          </script>
+        </div>
+
+        <div class="metas">
+          <p id="nomeMeta2"></p>
+          <p id="valorMeta2"></p>
+
+          <script>
+            const nomeMeta2 = "algo";
+            const valorMeta2 = "0,00";
+
+            document.getElementById("nomeMeta2").textContent = nomeMeta2;
+            document.getElementById("valorMeta2").textContent = valorMeta2;
+          </script>
+        </div>
+
+        <div class="metas">
+          <p id="nomeMeta3"></p>
+          <p id="valorMeta3"></p>
+
+          <script>
+            const nomeMeta3 = "algo";
+            const valorMeta3 = "0,00";
+
+            document.getElementById("nomeMeta3").textContent = nomeMeta3;
+            document.getElementById("valorMeta3").textContent = valorMeta3;
+          </script>
+        </div>
+
+        <div class="metas">
+          <p id="nomeMeta4"></p>
+          <p id="valorMeta4"></p>
+
+          <script>
+            const nomeMeta4 = "algo";
+            const valorMeta4 = "0,00";
+
+            document.getElementById("nomeMeta4").textContent = nomeMeta4;
+            document.getElementById("valorMeta4").textContent = valorMeta4;
+          </script>
+        </div>
+
+        <div class="metas">
+          <p id="nomeMeta5"></p>
+          <p id="valorMeta5"></p>
+
+          <script>
+            const nomeMeta5 = "algo";
+            const valorMeta5 = "0,00";
+
+            document.getElementById("nomeMeta5").textContent = nomeMeta5;
+            document.getElementById("valorMeta5").textContent = valorMeta5;
+          </script>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <ul>
+      <li>
+        <a href="sobreNos.html">sobre nós</a>
+      </li>
+    </ul>
+  </footer>
+</body>
+
+</html>
+
+<script>
+  const ctx1 = document
+    .getElementById("canvaGraficoPatrimonio")
+    .getContext("2d");
+  let valores = [6, 5, 4, 3, 2, 3];
+  let categorias = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "junho"];
+
+  new Chart(ctx1, {
+    type: "bar",
+    data: {
+      labels: categorias,
+      datasets: [
+        {
+          label: "valores",
+          data: valores,
+          backgroundColor: "rgba(87, 0, 228, 0.5)",
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+        },
+        title: {
+          display: true,
+        },
+      },
+      layout: {
+        padding: {
+          right: 100,
+        },
+      },
+    },
+  });
+</script>

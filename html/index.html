@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <main>
-      <div class="lateral">
-        <h1 class="logo">Conta certa</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <title>Document</title>
 
-        <div class="nomes">
-          <h1>SEJA BEM<br />VINDO!</h1>
-          <p>Rendimento e segurança <br />com Conta certa</p>
-        </div>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-        <button class="botao-lateral">Saiba mais</button>
+<body>
+  <main>
+    <div class="lateral">
+      <h1 class="logo">Conta certa</h1>
+
+      <div class="nomes">
+        <h1>SEJA BEM<br />VINDO!</h1>
+        <p>Rendimento e segurança <br />com Conta certa</p>
       </div>
 
-      <div class="principal">
-        <div class="titulos">
-          <h1>Conta certa</h1>
-        </div>
-        <br /><br />
+      <button class="botao-lateral">Saiba mais</button>
+    </div>
 
-        <form action="HomePage.html">
-          <p>Email</p>
-          <input
-            type="text"
-            required
-            id="Email"
-            placeholder="Digite Seu E-mail"
-          />
-          <br />
-
-          <p>Senha</p>
-          <input
-            type="text"
-            required
-            id="Senha"
-            placeholder="Digite sua senha"
-          />
-          <button class="botao-principal">Entrar</button>
-
-          <br />
-          <a href="Cadastro.html" style="margin-left: -300px">Criar conta</a>
-        </form>
+    <div class="principal">
+      <div class="titulos">
+        <h1>Conta certa</h1>
       </div>
-    </main>
-  </body>
+      <br /><br />
+
+      <form id="login-form" action="HomePage.html">
+        <p>Email</p>
+        <input type="text" required id="Email" placeholder="Digite Seu E-mail" />
+        <br />
+
+        <p>Senha</p>
+        <input type="text" required id="Senha" placeholder="Digite sua senha" />
+        <button class="botao-principal">Entrar</button>
+
+        <br />
+        <a href="Cadastro.html" style="margin-left: -300px">Criar conta</a>
+      </form>
+    </div>
+  </main>
+</body>
+
 </html>
+
+<script>
+  const form = document.getElementById('login-form');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+  });
+</script>
