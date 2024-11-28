@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metas</title>
+
+    <link
+      rel="shortcut icon"
+      href="css/imagens/dollar.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/Historico.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <p>Voltar</p>
+        <h1>Metas</h1>
+      </div>
+
+      <ul>
+        <li>
+          <a href="#">Perfil</a>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <form action="">
+        <div>
+          <label for="nomeMeta">Nome</label><br />
+          <input type="text" id="nomeMeta" placeholder="Nome da meta" />
+        </div>
+
+        <div>
+          <label for="valorMeta">Valor</label><br />
+          <input type="text" id="valorMeta" placeholder="Insira valor" />
+        </div>
+
+        <div>
+          <label for="descricaoMeta">Descrição</label><br />
+          <textarea
+            name=""
+            id="descricaoMeta"
+            placeholder="Insira uma descrição"
+          ></textarea>
+        </div>
+
+        <div>
+          <label for="categoriaMeta">Categoria</label><br />
+          <select name="" id="categoriaMeta">
+            <option value="outros">-- --</option>
+            <option value="viagem">Viagem</option>
+            <option value="patrimonio">Patrimonio</option>
+            <option value="reserva">Reserva de emrgência</option>
+            <option value="casa">Casa</option>
+            <option value="outros">outros</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="dataMeta">data</label><br />
+          <input type="date" name="" id="dataMeta" />
+        </div>
+
+        <div class="button">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+
+      <div class="historico">
+        <h1>Todas metas</h1>
+        <ul class="listaMetas"></ul>
+
+        <script>
+          const lista = document.querySelector(".listaMetas");
+
+          async function fethMetas() {
+            try {
+              const resposta = await fetch("/metas");
+
+              const metas = resposta.json();
+
+              lista.innerHTML = "";
+
+              metas.forEach((metas) => {
+                const li = document.createElement("li");
+                li.textContent =
+                  metas.descricao + " - " + metas.valor + " - " + metas.data;
+                lista.appendChild(li);
+              });
+            } catch (error) {
+              lista.innerHTML = "<li>Nenhuma receita encotrada!</li>";
+            }
+          }
+          fethMetas();
+        </script>
+      </div>
+    </main>
+  </body>
+</html>
